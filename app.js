@@ -1,24 +1,16 @@
-//gameboard state is an array 
-const Gameboard = () => {
-    board = [  ["","X",""],
-               ["","O",""], 
-               ["","X",""] ];
+// first cell
+let cross = document.createElement('cross');
+cross.className = "symbol";
+cross.innerHTML = "<span id='x'> X </span> ";
 
-    return {board};
-}
+let nought = document.createElement('nought');
+nought.className = "symbol";
+nought.innerHTML = "<span id='o'> O </span>"
 
-const Player = (symbol) => {
-    return {symbol};
-}
-
-//How to assign a player (2 player)
-//X and O is assigned when player views page
-// 
-
-board = Gameboard();
-player_one = Player("X");
-player_two = Player("O");
-
-//we want to insert board[0][0] into the first cell. 
-// the first cell is body->board->cell[0]
-body = document.body.getElementsByClassName("board");
+const tbody = document.querySelector('#board tbody');
+tbody.addEventListener('click', function (e) {
+  const cell = e.target.closest('td');
+  if (!cell) {return;} // Quit, not clicked on a cell
+  const row = cell.parentElement;
+  cell.append(cross);   
+});

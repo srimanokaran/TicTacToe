@@ -4,9 +4,14 @@ h1 {
 td {
     width: 100px;
     height: 100px;
+    text-align: center;
 }
-table {
+#board {
     margin: 100px auto;
+}
+
+#board:hover{
+    cursor: pointer;
 }
 .vert {
     border-left: 2px solid black;
@@ -15,4 +20,11 @@ table {
 .hori {
     border-top: 2px solid black;
     border-bottom: 2px solid black;
+}
+
+.symbol{
+    color: #000;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 6em;
+    font-weight: bold;
 }
