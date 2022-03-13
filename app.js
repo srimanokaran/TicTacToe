@@ -38,10 +38,10 @@ function check_win(counter, board){
     if(board[0][0] == cross && board[0][1] == cross && board[0][2] == cross){
         alert("Cross wins");
     }
-    if(board[1][0] == cross && board[0][1] == cross && board[0][2] == cross){
+    if(board[1][0] == cross && board[1][1] == cross && board[1][2] == cross){
         alert("Cross wins");
     }
-    if(board[2][0] == cross && board[0][1] == cross && board[0][2] == cross){
+    if(board[2][0] == cross && board[2][1] == cross && board[2][2] == cross){
         alert("Cross wins");
     }
 
@@ -49,10 +49,10 @@ function check_win(counter, board){
     if(board[0][0] == nought && board[0][1] == nought && board[0][2] == nought){
         alert("Nought wins");
     }
-    if(board[0][0] == nought && board[0][1] == nought && board[0][2] == nought){
+    if(board[1][0] == nought && board[1][1] == nought && board[1][2] == nought){
         alert("Nought wins");
     }
-    if(board[0][0] == nought&& board[0][1] == nought && board[0][2] == nought){
+    if(board[2][0] == nought&& board[2][1] == nought && board[2][2] == nought){
         alert("Nought wins");
     }
 

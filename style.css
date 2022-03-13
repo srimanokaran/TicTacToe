@@ -1,5 +1,6 @@
 h1 {
     text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 td {
     width: 100px;
@@ -12,19 +13,28 @@ td {
 
 #board:hover{
     cursor: pointer;
+    transition:cubic-bezier(1, 0, 0, 1);
 }
 .vert {
-    border-left: 2px solid black;
-    border-right: 2px solid black;
+    border-left: 6px dotted maroon;
+    border-right: 6px dotted maroon;
 }
 .hori {
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
+    border-top: 6px dotted maroon;
+    border-bottom: 6px dotted maroon;
 }
 
 .symbol{
     color: #000;
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif,sans-serif;
     font-size: 6em;
     font-weight: bold;
+}
+.symbol:hover{
+    color: brown;
+    transition: 3s;
+}
+
+body{
+    background-color:bisque;
 }
