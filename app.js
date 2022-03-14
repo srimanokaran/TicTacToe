@@ -169,8 +169,9 @@ function win_message(symbol){
         });
     }
 
-    //refresh page
-    setTimeout(function(){location.reload();}, 2000);
+    document.getElementsByClassName("swal2-confirm swal2-styled")[0].addEventListener("click", function(){
+        location.reload();
+    });
 }
 
 
