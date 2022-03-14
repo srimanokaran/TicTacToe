@@ -1,3 +1,4 @@
+
 // Create cross element
 function get_cross(){
     let cross = document.createElement('cross');
@@ -27,6 +28,7 @@ function check_win(counter, board){
     let cross = 1
     let nought = 0
     
+    //fill board
     if (document.querySelectorAll("#board td")[counter].getElementsByTagName("nought").length == 1 ){
         board[get_row(counter)][get_column(counter)] = nought;
     }
@@ -36,63 +38,63 @@ function check_win(counter, board){
 
     //row cross
     if(board[0][0] == cross && board[0][1] == cross && board[0][2] == cross){
-        alert("Cross wins");
+        win_message("cross");
     }
     if(board[1][0] == cross && board[1][1] == cross && board[1][2] == cross){
-        alert("Cross wins");
+        win_message("cross");
     }
     if(board[2][0] == cross && board[2][1] == cross && board[2][2] == cross){
-        alert("Cross wins");
+        win_message("cross");
     }
 
     //row nought
     if(board[0][0] == nought && board[0][1] == nought && board[0][2] == nought){
-        alert("Nought wins");
+        win_message("nought");
     }
     if(board[1][0] == nought && board[1][1] == nought && board[1][2] == nought){
-        alert("Nought wins");
+        win_message("nought");
     }
     if(board[2][0] == nought&& board[2][1] == nought && board[2][2] == nought){
-        alert("Nought wins");
+        win_message("nought");
     }
 
     //column cross
     if(board[0][0] == cross && board[1][0] == cross && board[2][0] == cross){
-        alert("Cross wins");
+        win_message("cross");
     }
     if(board[0][1] == cross && board[1][1] == cross && board[2][1] == cross){
-        alert("Cross wins");
+        win_message("cross");
     }
-    if(board[0][2] == cross && board[1][2] == cross && board[3][2] == cross){
-        alert("Cross wins");
+    if(board[0][2] == cross && board[1][2] == cross && board[2][2] == cross){
+        win_message("cross");
     }
     
     //column nought
     if(board[0][0] == nought && board[1][0] == nought && board[2][0] == nought){
-        alert("nought wins");
+        win_message("nought");
     }
     if(board[0][1] == nought && board[1][1] == nought && board[2][1] == nought){
-        alert("nought wins");
+        win_message("nought");
     }
-    if(board[0][2] == nought && board[1][2] == nought && board[3][2] == nought){
-        alert("nought wins");
+    if(board[0][2] == nought && board[1][2] == nought && board[2][2] == nought){
+        win_message("nought");
     }
 
     //diagonal
     if(board[0][0] == cross && board[1][1] == cross && board[2][2] == cross){
-        alert("cross wins");
+        win_message("cross");
+    }
+
+    if(board[0][2] == cross && board[1][1] == cross && board[2][0] == cross){
+        win_message("cross");
     }
 
     if(board[0][0] == nought && board[1][1] == nought && board[2][2] == nought){
-        alert("nought wins");
-    }
-    
-    if(board[0][2] == cross && board[1][1] == cross && board[2][0] == cross){
-        alert("cross wins");
+        win_message("nought");
     }
 
     if(board[0][2] == nought && board[1][1] == nought && board[2][0] == nought){
-        alert("nought wins");
+        win_message("nought");
     }
 }
 
@@ -146,5 +148,30 @@ function play_game(){
         });
     }
 }
+
+function win_message(symbol){
+
+    if(symbol === "cross"){
+
+        
+        Swal.fire({
+            icon: 'success',
+            text: 'Cross wins!'
+        
+        });
+        
+    }
+    else{
+        Swal.fire({
+            icon: 'success',
+            text: 'Nought wins!'
+        
+        });
+    }
+
+    //refresh page
+    setTimeout(function(){location.reload();}, 2000);
+}
+
 
 play_game();
